@@ -159,6 +159,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/mangos0.conf.dist.in ${CMAKE_CURRENT_
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/mangos1.conf.dist.in ${CMAKE_CURRENT_BINARY_DIR}/mangosd.conf.dist)
 #elseif defined(WOTLK)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/mangos2.conf.dist.in ${CMAKE_CURRENT_BINARY_DIR}/mangosd.conf.dist)
+#elseif defined(CATA)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/mangos3.conf.dist.in ${CMAKE_CURRENT_BINARY_DIR}/mangosd.conf.dist)
 #endif
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/mangosd.conf.dist DESTINATION ${CONF_INSTALL_DIR})
 

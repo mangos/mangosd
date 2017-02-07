@@ -52,6 +52,8 @@ const char RAW_VMAP_MAGIC[] = "VMAPz06";                    /**< used in extract
 const char RAW_VMAP_MAGIC[] = "VMAPs06";                    /**< used in extracted vmap files with raw data */
 #elseif defined(WOTLK)
 const char RAW_VMAP_MAGIC[] = "VMAPt06";                    /**< used in extracted vmap files with raw data */
+#elseif defined(CATA)
+const char RAW_VMAP_MAGIC[] = "VMAPc06";                    /**< used in extracted vmap files with raw data */
 #endif
 
 /*
@@ -223,6 +225,16 @@ extern int main(int argc, char** argv)
                    " For help and support please visit:    |_   _|_ __ _____\n"
                    "      Website: https://getmangos.eu      | | \\ V  V / _ \\\n"
                    " Forum / Wiki: https://getmangos.eu      |_|  \\_/\\_/\\___/ \n"
+                  );
+#elseif defined(CATA)
+                   "  __  __      _  _  ___  ___  ___                                 \n"
+                   " |  \\/  |__ _| \\| |/ __|/ _ \\/ __|                             \n"
+                   " | |\\/| / _` | .` | (_ | (_) \\__ \\                             \n"
+                   " |_|  |_\\__,_|_|\\_|\\___|\\___/|___/                            \n"
+                   "                                        _____ _                   \n"
+                   " For help and support please visit:    |_   _| |_  _ _ ___ ___    \n"
+                   "      Website: https://getmangos.eu      | | | ' \\| '_/ -_) -_)  \n"
+                   " Forum / Wiki: https://getmangos.eu      |_| |_||_|_| \\___\\___| \n"
                   );
 #endif
 
