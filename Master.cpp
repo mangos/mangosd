@@ -209,7 +209,9 @@ int Master::Run()
     ///- Set Realm to Offline, if crash happens. Only used once.
     LoginDatabase.DirectPExecute("UPDATE realmlist SET realmflags = realmflags | %u WHERE id = '%u'", REALM_FLAG_OFFLINE, realmID);
 
+#if defined(CLASSIC) || defined(TBC)
     initMTRandTSS();
+#endif
 
     ///- Initialize the World
     sWorld.SetInitialWorldSettings();
@@ -386,7 +388,9 @@ int Master::Run()
     WorldDatabase.HaltDelayThread();
     LoginDatabase.HaltDelayThread();
 
+#if defined(CLASSIC) || defined(TBC)
     deleteMTRandTSS();
+#endif
 
     sLog.outString("Halting process...");
 

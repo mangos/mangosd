@@ -25,4 +25,6 @@
 IDI_APPICON ICON DISCARDABLE "mangos0.ico"
 #elseif defined(TBC)
 IDI_APPICON ICON DISCARDABLE "mangos1.ico"
+#elseif defined(WOTLK)
+IDI_APPICON ICON DISCARDABLE "mangos2.ico"
 #endif

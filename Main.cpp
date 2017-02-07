@@ -50,6 +50,8 @@ char serviceDescription[] = "Massive Network Game Object Server";
 const char RAW_VMAP_MAGIC[] = "VMAPz06";                    /**< used in extracted vmap files with raw data */
 #elseif defined(TBC)
 const char RAW_VMAP_MAGIC[] = "VMAPs06";                    /**< used in extracted vmap files with raw data */
+#elseif defined(WOTLK)
+const char RAW_VMAP_MAGIC[] = "VMAPt06";                    /**< used in extracted vmap files with raw data */
 #endif
 
 /*
@@ -211,6 +213,16 @@ extern int main(int argc, char** argv)
                    " For help and support please visit:     / _ \\ _ _  ___  \n"
                    "      Website: https://getmangos.eu    | (_) | ' \\/ -_) \n"
                    " Forum / Wiki: https://getmangos.eu     \\___/|_||_\\___|\n"
+                  );
+#elseif defined(WOTLK)
+                   "  __  __      _  _  ___  ___  ___                      \n"
+                   " |  \\/  |__ _| \\| |/ __|/ _ \\/ __|   Wrath of the   \n"
+                   " | |\\/| / _` | .` | (_ | (_) \\__ \\     Lich King    \n"
+                   " |_|  |_\\__,_|_|\\_|\\___|\\___/|___/                 \n"
+                   "                                        _____          \n"
+                   " For help and support please visit:    |_   _|_ __ _____\n"
+                   "      Website: https://getmangos.eu      | | \\ V  V / _ \\\n"
+                   " Forum / Wiki: https://getmangos.eu      |_|  \\_/\\_/\\___/ \n"
                   );
 #endif
 
