@@ -487,7 +487,15 @@ bool ChatHandler::HandleAccountCreateCommand(char* args)
     std::string password = szPassword;
 
     AccountOpResult result;
-    result = sAccountMgr.CreateAccount(account_name, password);
+    // Only Include the expansion flag for TBC and beyond
+#if (!defined(CLASSIC))
+    uint32 expansion = 0;
+    if(ExtractUInt32(&args, expansion))
+        { result = sAccountMgr.CreateAccount(account_name, password, expansion); }
+    else
+#endif
+        { result = sAccountMgr.CreateAccount(account_name, password); }
+
     switch (result)
     {
         case AOR_OK:

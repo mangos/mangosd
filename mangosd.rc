@@ -21,5 +21,8 @@
  * World of Warcraft, and all World of Warcraft or Warcraft art, images,
  * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
-
-IDI_APPICON ICON DISCARDABLE "mangosd.ico"
+#if defined(CLASSIC)
+IDI_APPICON ICON DISCARDABLE "mangos0.ico"
+#elseif defined(TBC)
+IDI_APPICON ICON DISCARDABLE "mangos1.ico"
+#endif

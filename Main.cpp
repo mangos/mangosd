@@ -45,7 +45,13 @@
 char serviceName[] = "mangosd";
 char serviceLongName[] = "MaNGOS world service";
 char serviceDescription[] = "Massive Network Game Object Server";
+
+#if defined(CLASSIC)
 const char RAW_VMAP_MAGIC[] = "VMAPz06";                    /**< used in extracted vmap files with raw data */
+#elseif defined(TBC)
+const char RAW_VMAP_MAGIC[] = "VMAPs06";                    /**< used in extracted vmap files with raw data */
+#endif
+
 /*
  * -1 - not in service mode
  *  0 - stopped
@@ -186,6 +192,7 @@ extern int main(int argc, char** argv)
 
     sLog.outString("%s [world-daemon]", REVISION_NR);
     sLog.outString("<Ctrl-C> to stop.\n"
+#if defined(CLASSIC)
                    "  __  __      _  _  ___  ___  ___                         \n"
                    " |  \\/  |__ _| \\| |/ __|/ _ \\/ __|        We Love      \n"
                    " | |\\/| / _` | .` | (_ | (_) \\__ \\      Vanilla Wow    \n"
@@ -195,6 +202,18 @@ extern int main(int argc, char** argv)
                    "      Website: https://getmangos.eu     / // -_) '_/ _ \\ \n" 
                    " Forum / Wiki: https://getmangos.eu    /___\\___|_| \\___/\n" 
                   );
+#elseif defined(TBC)
+                   "  __  __      _  _  ___  ___  ___                        \n"
+                   " |  \\/  |__ _| \\| |/ __|/ _ \\/ __|     We Love the    \n"
+                   " | |\\/| / _` | .` | (_ | (_) \\__ \\   Burning Crusade  \n"
+                   " |_|  |_\\__,_|_|\\_|\\___|\\___/|___/                   \n"
+                   "                                         ___             \n"
+                   " For help and support please visit:     / _ \\ _ _  ___  \n"
+                   "      Website: https://getmangos.eu    | (_) | ' \\/ -_) \n"
+                   " Forum / Wiki: https://getmangos.eu     \\___/|_||_\\___|\n"
+                  );
+#endif
+
     sLog.outString("Using configuration file %s.", cfg_file);
 
     DETAIL_LOG("%s (Library: %s)", OPENSSL_VERSION_TEXT, SSLeay_version(SSLEAY_VERSION));
